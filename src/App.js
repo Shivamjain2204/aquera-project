@@ -1,11 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import UserProfile from './UserProfile';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Aquera Project</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/user/:username" component={UserProfile} />
+        <Route exact path="/" render={() => <div>Home Page Content</div>} />
+      </Routes>
+    </Router>
+   
   );
 }
 
